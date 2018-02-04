@@ -17,7 +17,7 @@ USER $NB_USER
 # Install Python 3 packages
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
-RUN conda install -c conda-forge --quiet --yes \
+RUN conda install --channel https://conda.anaconda.org/conda-forge --quiet --yes \
     'nomkl' \
     'ipywidgets=7.0*' \
     'pandas=0.19*' \
