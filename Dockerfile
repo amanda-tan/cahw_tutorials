@@ -20,7 +20,7 @@ USER $NB_USER
 RUN conda install --channel https://conda.anaconda.org/conda-forge --quiet --yes \
     'nomkl' \
     'ipywidgets=7.0*' \
-    'pandas=0.19*' \
+    'pandas=0.22*' \
     'numexpr=2.6*' \
     'matplotlib=2.0*' \
     'scipy=0.19*' \
@@ -42,6 +42,8 @@ RUN conda install --channel https://conda.anaconda.org/conda-forge --quiet --yes
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+    # Also activate ipywidgets extension for JupyterLab
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.31.0 && \
     npm cache clean && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     fix-permissions $CONDA_DIR
