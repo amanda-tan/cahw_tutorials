@@ -41,7 +41,7 @@ RUN conda install --channel https://conda.anaconda.org/conda-forge --quiet --yes
     'vincent=0.4.*' \
     'beautifulsoup4=4.5.*' \
     'protobuf=3.*' \
-    'thredds-crawler=1.5.3' \
+    'thredds_crawler=1.5.3' \
     'xarray=0.10.0' \ 
     'netcdf4=1.3.1' \
     'requests=2.18.4' \
